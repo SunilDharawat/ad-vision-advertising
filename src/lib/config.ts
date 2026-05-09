@@ -1,21 +1,21 @@
 // src/lib/config.ts
-import { SiteConfig } from "@/types";
+import { SiteConfig } from "../types";
 
 export const siteConfig: SiteConfig = {
   name: "Ad Vision Advertising",
   tagline: "Print Bold. Market Louder.",
   description:
     "Indore's trusted partner for flex printing, hoardings, event branding, digital marketing, and all advertising solutions. Quality that speaks before you do.",
-  url: "https://yoursite.com",
-  phone: "+91-XXXXXXXXXX",
-  whatsapp: "91XXXXXXXXXX",
-  email: "hello@yoursite.com",
-  address: "Your Full Address Here",
+  url: "https://advisionadvertising.com",
+  phone: "+91-9874563210",
+  whatsapp: "91-9874563210",
+  email: "advisionadvertising@gmail.com",
+  address: "123 Main Street",
   city: "Indore, Madhya Pradesh",
   socials: {
-    instagram: "https://instagram.com/yourhandle",
-    facebook: "https://facebook.com/yourpage",
-    youtube: "https://youtube.com/@yourchannel",
+    instagram: "https://instagram.com/advisionadvertising",
+    facebook: "https://facebook.com/advisionadvertising",
+    youtube: "https://youtube.com/@advisionadvertising",
   },
 };
 
