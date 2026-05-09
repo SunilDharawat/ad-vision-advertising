@@ -31,11 +31,11 @@ const reasons = [
 
 export default function WhyUsSection() {
   return (
-    <section className="py-24 bg-brand-dark relative overflow-hidden">
+    <section className="section-padding bg-brand-dark relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute right-0 top-0 w-1/2 h-full bg-linear-to-l from-brand-orange/3 to-transparent pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="section-container relative">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <div>

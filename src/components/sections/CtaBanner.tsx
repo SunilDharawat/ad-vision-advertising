@@ -25,8 +25,10 @@ export default function CtaBanner() {
           LET&apos;S WORK TOGETHER
         </span>
       </div>
-
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div
+        className="section-container relative text-center"
+        style={{ maxWidth: "56rem" }}
+      >
         <h2 className="font-display text-5xl lg:text-7xl text-white mb-4">
           READY TO GET STARTED?
         </h2>

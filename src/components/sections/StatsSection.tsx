@@ -49,7 +49,7 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 export default function StatsSection() {
   return (
     <section className="bg-brand-orange py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="section-container">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">

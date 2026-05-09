@@ -6,8 +6,8 @@ import SectionLabel from "../../components/ui/SectionLabel";
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-24 bg-brand-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="section-padding bg-brand-dark">
+      <div className="section-container">
         {/* Header */}
         <div className="max-w-2xl mb-16">
           <SectionLabel text="What We Do" />

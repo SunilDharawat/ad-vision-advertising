@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-brand-charcoal border-t border-white/10">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="section-container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Column */}
           <div className="lg:col-span-1">
@@ -153,7 +153,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/5 py-5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="section-container flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-white/30 text-xs">
             © {currentYear} {siteConfig.name}. All rights reserved.
           </p>
