@@ -84,10 +84,12 @@ const ptComponents = {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const { slug } = await params;
+
   const post = await sanityFetch<SanityPost>(POST_BY_SLUG_QUERY, {
-    slug: params.slug,
+    slug,
   });
   if (!post) return { title: "Post Not Found" };
   return {
@@ -100,16 +102,17 @@ export async function generateMetadata({
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   const [post, recentPosts] = await Promise.all([
-    sanityFetch<SanityPost>(POST_BY_SLUG_QUERY, { slug: params.slug }),
+    sanityFetch<SanityPost>(POST_BY_SLUG_QUERY, { slug }),
     sanityFetch<SanityPost[]>(RECENT_POSTS_QUERY),
   ]);
 
   if (!post) notFound();
 
-  const related = recentPosts.filter((p) => p.slug !== params.slug).slice(0, 2);
+  const related = recentPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
   return (
     <>
@@ -186,7 +189,13 @@ export default async function BlogPostPage({
                   </h3>
                   <div className="flex gap-2">
                     <a
-                      href={`https://wa.me/?text=${encodeURIComponent(post.title + " " + typeof window !== "undefined" ? window.location.href : "")}`}
+                      href={`https://wa.me/?text=${encodeURIComponent(
+                        post.title +
+                          " " +
+                          (typeof window !== "undefined"
+                            ? window.location.href
+                            : ""),
+                      )}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 text-center text-xs bg-green-600/20 hover:bg-green-600/30 text-green-400 py-2 rounded-lg transition-colors"
