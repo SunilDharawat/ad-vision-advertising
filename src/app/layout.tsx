@@ -5,6 +5,7 @@ import Navbar from "@/src/components/layout/Navbar";
 import Footer from "@/src/components/layout/Footer";
 import WhatsAppButton from "@/src/components/ui/WhatsAppButton";
 import "@/src/styles/globals.css";
+import GoogleAnalytics from "../components/analytics/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/og-image.jpg", // add a 1200×630 image to /public later
+        url: "/og-image.png", // add a 1200×630 image to /public later
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -117,6 +118,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <GoogleAnalytics />
       </head>
       <body>
         <Navbar />
