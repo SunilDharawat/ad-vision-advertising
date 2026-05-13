@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Phone } from "lucide-react";
 import { navLinks, siteConfig } from "@/src/lib/config";
 import { cn } from "@/src/lib/utils";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,11 +38,14 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-brand-orange rounded flex items-center justify-center">
-              <span className="text-white font-display text-lg leading-none">
-                F
-              </span>
-            </div>
+            <Image
+              src="/company_log.png"
+              alt={siteConfig.name}
+              width={50}
+              height={50}
+              className="rounded object-contain  mix-blend-lighten"
+              priority
+            />
             <span className="font-display text-2xl tracking-wider text-white">
               {siteConfig.name.split(" ")[0]}
               <span className="text-brand-orange">
