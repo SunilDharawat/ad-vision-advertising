@@ -4,7 +4,7 @@ import { siteConfig } from "@/src/lib/config";
 import Navbar from "@/src/components/layout/Navbar";
 import Footer from "@/src/components/layout/Footer";
 import WhatsAppButton from "@/src/components/ui/WhatsAppButton";
-import "@/src/styles/globals.css";
+import "./globals.css";
 import GoogleAnalytics from "../components/analytics/GoogleAnalytics";
 
 export const metadata: Metadata = {

@@ -30,6 +30,28 @@ const reasons = [
 ];
 
 export default function WhyUsSection() {
+  const users = [
+    {
+      letter: "A",
+      border: "border-red-500",
+      text: "text-red-400",
+    },
+    {
+      letter: "R",
+      border: "border-blue-500",
+      text: "text-blue-400",
+    },
+    {
+      letter: "S",
+      border: "border-green-500",
+      text: "text-green-400",
+    },
+    {
+      letter: "M",
+      border: "border-yellow-500",
+      text: "text-yellow-400",
+    },
+  ];
   return (
     <section className="section-padding bg-brand-dark relative overflow-hidden">
       {/* Background accent */}
@@ -52,12 +74,12 @@ export default function WhyUsSection() {
             </p>
             <div className="flex items-center gap-4">
               <div className="flex -space-x-2">
-                {[...Array(4)].map((_, i) => (
+                {users.map((user, i) => (
                   <div
                     key={i}
-                    className="w-9 h-9 rounded-full bg-brand-gray border-2 border-brand-dark flex items-center justify-center text-xs text-white/60"
+                    className={`w-9 h-9 rounded-full bg-brand-gray border-2 ${user.border} flex items-center justify-center text-xs font-semibold ${user.text}`}
                   >
-                    {["A", "R", "S", "M"][i]}
+                    {user.letter}
                   </div>
                 ))}
               </div>

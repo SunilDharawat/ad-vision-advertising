@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Send, CircleUser, Video } from "lucide-react";
 import { siteConfig, navLinks, services } from "@/src/lib/config";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -14,11 +15,14 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-brand-orange rounded flex items-center justify-center">
-                <span className="text-white font-display text-lg leading-none">
-                  F
-                </span>
-              </div>
+              <Image
+                src="/company_log.png"
+                alt={siteConfig.name}
+                width={50}
+                height={50}
+                className="rounded object-contain mix-blend-lighten"
+                priority
+              />
               <span className="font-display text-2xl tracking-wider text-white">
                 {siteConfig.name.split(" ")[0]}
                 <span className="text-brand-orange">
@@ -37,7 +41,7 @@ export default function Footer() {
                   href={siteConfig.socials.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded bg-white/5 hover:bg-brand-orange/20 hover:text-brand-orange text-white/50 flex items-center justify-center transition-all"
+                  className="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-orange/20 hover:text-brand-orange text-white/50 flex items-center justify-center transition-all"
                 >
                   <Send size={16} />
                 </a>
@@ -47,7 +51,7 @@ export default function Footer() {
                   href={siteConfig.socials.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded bg-white/5 hover:bg-brand-orange/20 hover:text-brand-orange text-white/50 flex items-center justify-center transition-all"
+                  className="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-orange/20 hover:text-brand-orange text-white/50 flex items-center justify-center transition-all"
                 >
                   <CircleUser size={16} />
                 </a>
@@ -57,7 +61,7 @@ export default function Footer() {
                   href={siteConfig.socials.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded bg-white/5 hover:bg-brand-orange/20 hover:text-brand-orange text-white/50 flex items-center justify-center transition-all"
+                  className="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-orange/20 hover:text-brand-orange text-white/50 flex items-center justify-center transition-all"
                 >
                   <Video size={16} />
                 </a>
@@ -109,7 +113,7 @@ export default function Footer() {
               Contact Us
             </h3>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
+              <li className="flex items-start gap-3 ">
                 <MapPin
                   size={16}
                   className="text-brand-orange mt-0.5 shrink-0"
@@ -143,7 +147,7 @@ export default function Footer() {
             {/* CTA */}
             <Link
               href="/contact"
-              className="mt-6 inline-block bg-brand-orange hover:bg-orange-500 text-white text-sm font-medium px-5 py-2.5 rounded transition-all"
+              className="mt-6 inline-block bg-brand-orange hover:bg-orange-500 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all"
             >
               Get a Free Quote
             </Link>

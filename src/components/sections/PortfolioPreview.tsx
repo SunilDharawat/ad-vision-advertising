@@ -109,7 +109,7 @@ export default function PortfolioPreview() {
         <div className="mt-10 text-center">
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-2 bg-brand-orange hover:bg-orange-500 text-white text-sm font-medium px-8 py-4 rounded transition-all hover:shadow-lg hover:shadow-brand-orange/25"
+            className="inline-flex items-center gap-2 bg-brand-orange hover:bg-orange-500 text-white text-sm font-medium px-8 py-4 rounded-full transition-all hover:shadow-lg hover:shadow-brand-orange/25"
           >
             See All Projects <ArrowRight size={16} />
           </Link>

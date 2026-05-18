@@ -81,10 +81,15 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 mb-10">
-              <Button href="/contact" size="lg">
+              <Button href="/contact" size="lg" className="rounded-full">
                 Get a Free Quote <ArrowRight size={18} />
               </Button>
-              <Button href="/portfolio" variant="outline" size="lg">
+              <Button
+                href="/portfolio"
+                variant="outline"
+                size="lg"
+                className="rounded-full"
+              >
                 View Our Work
               </Button>
             </div>

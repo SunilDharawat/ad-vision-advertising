@@ -199,7 +199,7 @@ export default function ServicesPage() {
 
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 bg-brand-orange hover:bg-orange-500 text-white text-sm font-medium px-6 py-3 rounded transition-all"
+                    className="inline-flex items-center gap-2 bg-brand-orange hover:bg-orange-500 text-white text-sm font-medium px-6 py-3 rounded-full transition-all"
                   >
                     Get a Quote for This <ArrowRight size={14} />
                   </Link>
@@ -230,9 +230,12 @@ export default function ServicesPage() {
                         {service.useCases.map((u) => (
                           <span
                             key={u}
-                            className="text-xs bg-white/5 border border-white/10 text-white/60 px-3 py-1 rounded-full"
+                            className="group relative overflow-hidden rounded-full border border-white/10 px-3 py-1 text-xs text-white"
                           >
-                            {u}
+                            {/* Animated background fill */}
+                            <span className="absolute inset-0 bg-gradient-to-r from-brand-orange to-orange-400 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+                            {/* Text */}
+                            <span className="relative z-10">{u}</span>
                           </span>
                         ))}
                       </div>

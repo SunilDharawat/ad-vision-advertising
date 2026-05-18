@@ -63,7 +63,7 @@ export default function ServicesSection() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 text-brand-orange hover:text-white border border-brand-orange hover:bg-brand-orange text-sm font-medium px-6 py-3 rounded transition-all"
+            className="inline-flex items-center gap-2 text-brand-orange hover:text-white border border-brand-orange hover:bg-brand-orange text-sm font-medium px-6 py-3 rounded-full transition-all"
           >
             Discuss Your Project <ArrowRight size={14} />
           </Link>

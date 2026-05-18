@@ -1,7 +1,8 @@
 // src/components/sections/CtaBanner.tsx
 import Link from "next/link";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { siteConfig } from "../../lib/config";
+import Image from "next/image";
 
 export default function CtaBanner() {
   const waHref = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent("Hi! I'd like to get a quote for my project.")}`;
@@ -39,7 +40,7 @@ export default function CtaBanner() {
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-white text-brand-orange hover:bg-brand-dark hover:text-white font-semibold px-8 py-4 rounded transition-all text-sm"
+            className="inline-flex items-center gap-2 bg-white text-brand-orange hover:bg-brand-dark hover:text-white font-semibold px-8 py-4 rounded-full transition-all text-sm"
           >
             Get a Free Quote <ArrowRight size={16} />
           </Link>
@@ -47,9 +48,15 @@ export default function CtaBanner() {
             href={waHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-brand-orange font-semibold px-8 py-4 rounded transition-all text-sm"
+            className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-brand-orange font-semibold px-8 py-4 rounded-full transition-all text-sm"
           >
-            <MessageCircle size={16} /> WhatsApp Us
+            <Image
+              src="/whatsapp-icon.png"
+              alt="WhatsApp"
+              width={20}
+              height={20}
+            />
+            WhatsApp Us
           </a>
         </div>
       </div>

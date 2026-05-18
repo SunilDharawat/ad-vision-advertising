@@ -3,11 +3,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone } from "lucide-react";
 import { navLinks, siteConfig } from "@/src/lib/config";
 import { cn } from "@/src/lib/utils";
-import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
@@ -37,18 +36,19 @@ export default function Navbar() {
       <div className="section-container">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2">
             <Image
               src="/company_log.png"
               alt={siteConfig.name}
               width={50}
               height={50}
-              className="rounded object-contain  mix-blend-lighten"
+              className="rounded object-contain mix-blend-lighten"
               priority
             />
             <span className="font-display text-2xl tracking-wider text-white">
               {siteConfig.name.split(" ")[0]}
               <span className="text-brand-orange">
+                {" "}
                 {siteConfig.name.split(" ").slice(1).join(" ")}
               </span>
             </span>
@@ -61,7 +61,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "px-4 py-2 rounded text-sm font-medium transition-all duration-200",
+                  "px-4 py-2 rounded-full text-sm font-medium transition-all duration-200",
                   pathname === link.href
                     ? "text-brand-orange bg-brand-orange/10"
                     : "text-white/70 hover:text-white hover:bg-white/5",
@@ -72,7 +72,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* CTA Button — Desktop */}
+          {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={`tel:${siteConfig.phone}`}
@@ -83,7 +83,7 @@ export default function Navbar() {
             </a>
             <Link
               href="/contact"
-              className="bg-brand-orange hover:bg-orange-500 text-white text-sm font-medium px-5 py-2.5 rounded transition-all duration-200 hover:shadow-lg hover:shadow-brand-orange/25"
+              className="bg-brand-orange hover:bg-orange-500 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-brand-orange/25"
             >
               Get a Quote
             </Link>

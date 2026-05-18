@@ -75,7 +75,7 @@ export default function ContactPage() {
                   const Icon = item.icon;
                   const content = (
                     <div className="flex items-start gap-4 bg-brand-charcoal border border-white/8 hover:border-brand-orange/30 rounded-xl p-4 transition-colors group">
-                      <div className="w-10 h-10 bg-brand-orange/10 group-hover:bg-brand-orange/20 rounded-lg flex items-center justify-center shrink-0 transition-colors">
+                      <div className="w-10 h-10 bg-brand-orange/10 group-hover:bg-brand-orange/20 rounded-full flex items-center justify-center shrink-0 transition-colors">
                         <Icon size={18} className="text-brand-orange" />
                       </div>
                       <div>
