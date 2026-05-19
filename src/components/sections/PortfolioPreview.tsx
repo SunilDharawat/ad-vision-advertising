@@ -1,14 +1,16 @@
 // src/components/sections/PortfolioPreview.tsx
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import SectionLabel from "../../components/ui/SectionLabel";
+import { cloudinaryUrl } from "@/src/lib/cloudinary";
 
-// Placeholder items — replace with real Sanity/Cloudinary data in Step 5
 const portfolioItems = [
   {
     id: "1",
     title: "Retail Chain Rollout",
     category: "Flex Printing",
+    image: "Flex-Printing-1_rtzo4l",
     bg: "from-orange-900/40 to-brand-dark",
     size: "lg",
   },
@@ -16,6 +18,7 @@ const portfolioItems = [
     id: "2",
     title: "Corporate Event Branding",
     category: "Event Branding",
+    image: "Corporate-1_un7q3d",
     bg: "from-blue-900/40 to-brand-dark",
     size: "sm",
   },
@@ -23,6 +26,7 @@ const portfolioItems = [
     id: "3",
     title: "Mall Hoarding Campaign",
     category: "Outdoor Signage",
+    image: "Mall-1_rp9ydh",
     bg: "from-purple-900/40 to-brand-dark",
     size: "sm",
   },
@@ -30,6 +34,7 @@ const portfolioItems = [
     id: "4",
     title: "Food Brand Vehicle Wrap",
     category: "Vehicle Wrapping",
+    image: "Van-1_asrqqo",
     bg: "from-green-900/40 to-brand-dark",
     size: "sm",
   },
@@ -37,6 +42,7 @@ const portfolioItems = [
     id: "5",
     title: "LED Showroom Display",
     category: "LED & Neon",
+    image: "Led-1_uytxez",
     bg: "from-yellow-900/40 to-brand-dark",
     size: "sm",
   },
@@ -67,9 +73,23 @@ export default function PortfolioPreview() {
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[200px]">
           {/* Large card — spans 2 rows */}
           <div className="row-span-2 col-span-2 lg:col-span-1 group relative bg-brand-dark border border-white/8 rounded-2xl overflow-hidden cursor-pointer hover:border-brand-orange/30 transition-all">
-            <div
-              className={`absolute inset-0 bg-linear-to-br ${portfolioItems[0].bg}`}
+            {/* Cloudinary image */}
+            <Image
+              src={cloudinaryUrl(portfolioItems[0].image, {
+                width: 600,
+                height: 800,
+                crop: "fill",
+              })}
+              alt={portfolioItems[0].title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 1024px) 50vw, 33vw"
             />
+            {/* Gradient overlay */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-br ${portfolioItems[0].bg} opacity-60`}
+            />
+            {/* Text */}
             <div className="absolute inset-0 flex flex-col justify-end p-6">
               <span className="text-brand-orange text-xs font-semibold uppercase tracking-widest mb-2">
                 {portfolioItems[0].category}
@@ -79,12 +99,6 @@ export default function PortfolioPreview() {
               </h3>
             </div>
             <div className="absolute inset-0 bg-brand-orange/0 group-hover:bg-brand-orange/5 transition-colors" />
-            {/* Placeholder overlay */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <p className="text-white/10 text-sm text-center px-4">
-                Your project image here
-              </p>
-            </div>
           </div>
 
           {/* Small cards */}
@@ -93,7 +107,23 @@ export default function PortfolioPreview() {
               key={item.id}
               className="group relative bg-brand-dark border border-white/8 rounded-2xl overflow-hidden cursor-pointer hover:border-brand-orange/30 transition-all"
             >
-              <div className={`absolute inset-0 bg-linear-to-br ${item.bg}`} />
+              {/* Cloudinary image */}
+              <Image
+                src={cloudinaryUrl(item.image, {
+                  width: 400,
+                  height: 300,
+                  crop: "fill",
+                })}
+                alt={item.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 768px) 50vw, 33vw"
+              />
+              {/* Gradient overlay */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-60`}
+              />
+              {/* Text */}
               <div className="absolute inset-0 flex flex-col justify-end p-4">
                 <span className="text-brand-orange text-[10px] font-semibold uppercase tracking-widest mb-1">
                   {item.category}

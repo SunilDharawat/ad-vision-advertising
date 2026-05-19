@@ -6,6 +6,8 @@ import { siteConfig, services } from "../../lib/config";
 import PageHero from "../../components/ui/PageHero";
 import CtaBanner from "../../components/sections/CtaBanner";
 import Image from "next/image";
+import { cloudinaryUrl } from "@/src/lib/cloudinary";
+import ImageSlider from "@/src/components/ui/ImageSlider";
 
 export const metadata: Metadata = {
   title: "Our Services",
@@ -23,6 +25,12 @@ const serviceDetails = [
   {
     slug: "flex-printing",
     icon: "/flex-printing-logo.png",
+    publicId: [
+      "Shop-Banner-1_arckat",
+      "Event-Activity-1_lbqm79",
+      "Hoarding-1_hoxapt",
+      "Construction-Site-1_x9sgja",
+    ],
     title: "Flex Printing",
     tagline: "Large format. Vibrant colour. Built to last.",
     description:
@@ -186,7 +194,7 @@ export default function ServicesPage() {
                   {/* Features */}
                   <div className="mb-8">
                     <h3 className="text-white text-sm font-semibold uppercase tracking-widest mb-4">
-                      What's Included
+                      What&#39;s Included
                     </h3>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {service.features.map((f) => (
@@ -219,15 +227,21 @@ export default function ServicesPage() {
                   }
                 >
                   <div className="bg-brand-charcoal border border-white/8 rounded-2xl overflow-hidden">
-                    {/* Image placeholder */}
-                    <div className="aspect-[4/3] bg-gradient-to-br from-brand-orange/10 to-brand-dark flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-6xl mb-3">{service.icon}</div>
-                        <p className="text-white/20 text-sm">
-                          Add {service.title} image here
-                        </p>
+                    {service.publicId ? (
+                      <ImageSlider
+                        publicIds={service.publicId}
+                        alt={service.title}
+                        aspectRatio="4/3"
+                        autoplayDelay={3500}
+                      />
+                    ) : (
+                      // Fallback placeholder for services without publicId yet
+                      <div className="aspect-[4/3] bg-brand-charcoal flex items-center justify-center">
+                        <span className="text-white/20 text-sm">
+                          Image coming soon
+                        </span>
                       </div>
-                    </div>
+                    )}
                     {/* Use cases */}
                     <div className="p-5 border-t border-white/8">
                       <p className="text-white/30 text-xs uppercase tracking-widest mb-3">

@@ -35,7 +35,8 @@ export const services = [
     slug: "flex-printing",
     description:
       "Large format flex boards, banners, and hoardings with vibrant colour output.",
-    icon: "🖨️",
+    // icon: "🖨️",
+    icon: "/flex-printing-logo.png",
   },
   {
     id: "2",
@@ -43,7 +44,7 @@ export const services = [
     slug: "hoarding-signage",
     description:
       "Outdoor hoardings, shop signboards, and road-facing displays.",
-    icon: "🏗️",
+    icon: "/hoarding-logo.png",
   },
   {
     id: "3",
@@ -51,7 +52,7 @@ export const services = [
     slug: "event-branding",
     description:
       "Complete event setups — backdrops, standees, stage branding, and décor.",
-    icon: "🎪",
+    icon: "/event-logo.png",
   },
   {
     id: "4",
@@ -59,14 +60,14 @@ export const services = [
     slug: "digital-marketing",
     description:
       "Social media management, Google Ads, and online presence building.",
-    icon: "📱",
+    icon: "/digital-logo.png",
   },
   {
     id: "5",
     title: "Vehicle Wrapping",
     slug: "vehicle-wrapping",
     description: "Full and partial vehicle wraps for mobile brand visibility.",
-    icon: "🚐",
+    icon: "/van-logo.png",
   },
   {
     id: "6",
@@ -74,6 +75,6 @@ export const services = [
     slug: "led-neon-displays",
     description:
       "Custom LED signs, neon-style displays, and illuminated boards.",
-    icon: "💡",
+    icon: "/led-logo.png",
   },
 ];

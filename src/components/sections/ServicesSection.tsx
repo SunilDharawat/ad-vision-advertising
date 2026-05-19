@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { services } from "../../lib/config";
 import SectionLabel from "../../components/ui/SectionLabel";
+import Image from "next/image";
 
 export default function ServicesSection() {
   return (
@@ -30,12 +31,17 @@ export default function ServicesSection() {
               className="group relative bg-brand-charcoal border border-white/8 hover:border-brand-orange/40 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-orange/5"
             >
               {/* Index number */}
-              <span className="absolute top-5 right-5 font-display text-5xl text-white/5 group-hover:text-brand-orange/10 transition-colors leading-none">
+              <span className="absolute top-5 right-5 font-display text-5xl text-white/5 group-hover:text-brand-orange/20 transition-colors leading-none">
                 0{index + 1}
               </span>
 
               {/* Icon */}
-              <div className="text-3xl mb-5">{service.icon}</div>
+              <Image
+                src={service.icon}
+                alt={service.title}
+                width={100}
+                height={100}
+              />
 
               {/* Content */}
               <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-brand-orange transition-colors">
