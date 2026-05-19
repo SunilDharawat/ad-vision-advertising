@@ -1,6 +1,6 @@
 // src/app/contact/page.tsx
 import type { Metadata } from "next";
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageCircleMore } from "lucide-react";
 import { siteConfig } from "../../lib/config";
 import PageHero from "../../components/ui/PageHero";
 import ContactForm from "../../components/forms/ContactForm";
@@ -18,7 +18,7 @@ const contactInfo = [
     href: `tel:${siteConfig.phone}`,
   },
   {
-    icon: MessageCircle,
+    icon: MessageCircleMore,
     label: "WhatsApp",
     value: "Chat directly with our team",
     href: `https://wa.me/${siteConfig.whatsapp}`,

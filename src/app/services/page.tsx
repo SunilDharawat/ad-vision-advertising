@@ -5,6 +5,7 @@ import Link from "next/link";
 import { siteConfig, services } from "../../lib/config";
 import PageHero from "../../components/ui/PageHero";
 import CtaBanner from "../../components/sections/CtaBanner";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Our Services",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
 const serviceDetails = [
   {
     slug: "flex-printing",
-    icon: "🖨️",
+    icon: "/flex-printing-logo.png",
     title: "Flex Printing",
     tagline: "Large format. Vibrant colour. Built to last.",
     description:
@@ -41,7 +42,7 @@ const serviceDetails = [
   },
   {
     slug: "hoarding-signage",
-    icon: "🏗️",
+    icon: "/hoarding-logo.png",
     title: "Hoarding & Signage",
     tagline: "Own the street. Own the attention.",
     description:
@@ -61,7 +62,7 @@ const serviceDetails = [
   },
   {
     slug: "event-branding",
-    icon: "🎪",
+    icon: "/event-logo.png",
     title: "Event Branding",
     tagline: "Every surface. Every moment. Your brand.",
     description:
@@ -81,7 +82,7 @@ const serviceDetails = [
   },
   {
     slug: "digital-marketing",
-    icon: "📱",
+    icon: "/digital-logo.png",
     title: "Digital Marketing",
     tagline: "Found online. Chosen over competitors.",
     description:
@@ -101,7 +102,7 @@ const serviceDetails = [
   },
   {
     slug: "vehicle-wrapping",
-    icon: "🚐",
+    icon: "/van-logo.png",
     title: "Vehicle Wrapping",
     tagline: "Your brand. Moving through the city.",
     description:
@@ -121,7 +122,7 @@ const serviceDetails = [
   },
   {
     slug: "led-neon-displays",
-    icon: "💡",
+    icon: "/led-logo.png",
     title: "LED & Neon Displays",
     tagline: "Glow. Stand out. Be remembered.",
     description:
@@ -165,7 +166,13 @@ export default function ServicesPage() {
               >
                 {/* Text side */}
                 <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
-                  <div className="text-4xl mb-4">{service.icon}</div>
+                  {/* <div className="text-4xl mb-4">{service.icon}</div> */}
+                  <Image
+                    src={service.icon}
+                    alt={service.title}
+                    width={150}
+                    height={150}
+                  />
                   <p className="text-brand-orange text-sm font-semibold uppercase tracking-widest mb-2">
                     {service.tagline}
                   </p>
