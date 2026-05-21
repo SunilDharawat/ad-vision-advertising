@@ -24,12 +24,13 @@ export const metadata: Metadata = {
 const serviceDetails = [
   {
     slug: "flex-printing",
-    icon: "/flex-printing-logo.png",
+    icon: "Flex-Printing-Logo_vfhebp",
     publicId: [
       "Shop-Banner-1_arckat",
       "Event-Activity-1_lbqm79",
       "Hoarding-1_hoxapt",
       "Construction-Site-1_x9sgja",
+      "State_Bank_Flex_q7xhs3",
     ],
     title: "Flex Printing",
     tagline: "Large format. Vibrant colour. Built to last.",
@@ -50,7 +51,14 @@ const serviceDetails = [
   },
   {
     slug: "hoarding-signage",
-    icon: "/hoarding-logo.png",
+    icon: "hoarding-logo_zizf0x",
+    publicId: [
+      "Acadmy_lzddmu",
+      "Max_woman_iillms",
+      "Board_tqtfe9",
+      "Beer_Neon_bt5rvy",
+      "Club_poatl9",
+    ],
     title: "Hoarding & Signage",
     tagline: "Own the street. Own the attention.",
     description:
@@ -70,7 +78,8 @@ const serviceDetails = [
   },
   {
     slug: "event-branding",
-    icon: "/event-logo.png",
+    icon: "event-logo_cj0ipb",
+    publicId: ["Indore_Fastival_rzvgr5", "Event_dljet3", "Acadmy_lzddmu"],
     title: "Event Branding",
     tagline: "Every surface. Every moment. Your brand.",
     description:
@@ -90,7 +99,13 @@ const serviceDetails = [
   },
   {
     slug: "digital-marketing",
-    icon: "/digital-logo.png",
+    icon: "digital-logo_anto7c",
+    publicId: [
+      "DMart_kadpgv",
+      "Garage_flex_mokxfq",
+      "Metro_dxyjeo",
+      "Corporate-2_xulq05",
+    ],
     title: "Digital Marketing",
     tagline: "Found online. Chosen over competitors.",
     description:
@@ -110,7 +125,8 @@ const serviceDetails = [
   },
   {
     slug: "vehicle-wrapping",
-    icon: "/van-logo.png",
+    icon: "van-logo_ol5u06",
+    publicId: ["All_van_hc1qfd", "Van_activity_nthhii"],
     title: "Vehicle Wrapping",
     tagline: "Your brand. Moving through the city.",
     description:
@@ -130,7 +146,13 @@ const serviceDetails = [
   },
   {
     slug: "led-neon-displays",
-    icon: "/led-logo.png",
+    icon: "led-logo_btyjun",
+    publicId: [
+      "HQ_trjpqe",
+      "Max_woman_iillms",
+      "Board_tqtfe9",
+      "Beer_Neon_bt5rvy",
+    ],
     title: "LED & Neon Displays",
     tagline: "Glow. Stand out. Be remembered.",
     description:
@@ -174,9 +196,8 @@ export default function ServicesPage() {
               >
                 {/* Text side */}
                 <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
-                  {/* <div className="text-4xl mb-4">{service.icon}</div> */}
                   <Image
-                    src={service.icon}
+                    src={cloudinaryUrl(service.icon)}
                     alt={service.title}
                     width={150}
                     height={150}

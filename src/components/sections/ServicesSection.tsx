@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { services } from "../../lib/config";
 import SectionLabel from "../../components/ui/SectionLabel";
 import Image from "next/image";
+import { cloudinaryUrl } from "@/src/lib/cloudinary";
 
 export default function ServicesSection() {
   return (
@@ -37,7 +38,7 @@ export default function ServicesSection() {
 
               {/* Icon */}
               <Image
-                src={service.icon}
+                src={cloudinaryUrl(service.icon)}
                 alt={service.title}
                 width={100}
                 height={100}

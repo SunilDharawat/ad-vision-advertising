@@ -70,7 +70,7 @@ export default function PortfolioGrid({
                 className="group relative bg-brand-charcoal border border-white/8 rounded-2xl overflow-hidden hover:border-brand-orange/30 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
               >
                 {/* Image */}
-                <div className="aspect-[4/3] relative overflow-hidden">
+                <div className="aspect-4/3 relative overflow-hidden">
                   {project.imageUrl ? (
                     <Image
                       src={project.imageUrl}
@@ -81,7 +81,7 @@ export default function PortfolioGrid({
                     />
                   ) : (
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${fallbackGradients[i % fallbackGradients.length]} to-brand-dark`}
+                      className={`absolute inset-0 bg-linear-to-br ${fallbackGradients[i % fallbackGradients.length]} to-brand-dark`}
                     />
                   )}
                   {/* Hover overlay */}

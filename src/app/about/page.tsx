@@ -7,6 +7,9 @@ import PageHero from "../../components/ui/PageHero";
 import SectionLabel from "../../components/ui/SectionLabel";
 import StatsSection from "../../components/sections/StatsSection";
 import CtaBanner from "../../components/sections/CtaBanner";
+import { de } from "zod/v4/locales";
+import Image from "next/image";
+import { cloudinaryUrl } from "@/src/lib/cloudinary";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -15,25 +18,25 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    icon: "⚡",
+    icon: "speed_ecebk5",
     title: "Speed Without Compromise",
     description:
       "Fast doesn't mean sloppy. We built systems to deliver on tight deadlines without cutting corners on quality.",
   },
   {
-    icon: "🎯",
+    icon: "result_vw1o7x",
     title: "Results-First Thinking",
     description:
       "Every banner, board, and campaign is designed with one goal — getting more eyes on your business.",
   },
   {
-    icon: "🤝",
+    icon: "longterm_t1dsss",
     title: "Long-Term Partnerships",
     description:
       "Most of our clients have been with us for years. We grow when you grow, and that keeps us invested in your success.",
   },
   {
-    icon: "🌍",
+    icon: "local_vmn1e6",
     title: "Local Expertise",
     description:
       "We know Indore's markets, localities, and audiences. That knowledge shapes better advertising decisions.",
@@ -42,13 +45,29 @@ const values = [
 
 const team = [
   {
-    name: "Founder / Creative Director",
+    name: "Raj Chuorasiya",
+    designation: "Director & Founder",
     initial: "Y",
     color: "bg-brand-orange",
   },
-  { name: "Production Head", initial: "A", color: "bg-blue-700" },
-  { name: "Digital Marketing Lead", initial: "R", color: "bg-purple-700" },
-  { name: "Client Relations", initial: "S", color: "bg-green-700" },
+  {
+    name: "Aditya Singh",
+    designation: "Production Head",
+    initial: "A",
+    color: "bg-blue-700",
+  },
+  {
+    name: "Nikita Gupta",
+    designation: "Digital Marketing Lead",
+    initial: "R",
+    color: "bg-purple-700",
+  },
+  {
+    name: "Sunil Dharawat",
+    designation: "Developent Lead",
+    initial: "S",
+    color: "bg-green-700",
+  },
 ];
 
 const milestones = [
@@ -172,7 +191,13 @@ export default function AboutPage() {
                 key={v.title}
                 className="bg-brand-dark border border-white/8 rounded-2xl p-6 hover:border-brand-orange/30 transition-colors"
               >
-                <div className="text-3xl mb-4">{v.icon}</div>
+                {/* <div className="text-3xl mb-4">{v.icon}</div> */}
+                <Image
+                  src={cloudinaryUrl(v.icon)}
+                  alt={v.title}
+                  width={120}
+                  height={120}
+                />
                 <h3 className="text-white font-semibold mb-2">{v.title}</h3>
                 <p className="text-white/40 text-sm leading-relaxed">
                   {v.description}
@@ -207,15 +232,11 @@ export default function AboutPage() {
                 </div>
                 <p className="text-white/50 text-sm">{member.name}</p>
                 <p className="text-white/20 text-xs mt-1">
-                  Add real photo & name
+                  {member.designation}
                 </p>
               </div>
             ))}
           </div>
-          <p className="text-center text-white/20 text-sm mt-8">
-            Update team names and photos in{" "}
-            <code className="text-brand-orange/60">src/app/about/page.tsx</code>
-          </p>
         </div>
       </section>
 
