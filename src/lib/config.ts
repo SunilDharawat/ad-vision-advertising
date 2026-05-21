@@ -6,11 +6,11 @@ export const siteConfig: SiteConfig = {
   tagline: "Print Bold. Market Louder.",
   description:
     "Indore's trusted partner for flex printing, hoardings, event branding, digital marketing, and all advertising solutions. Quality that speaks before you do.",
-  url: "https://advisionadvertising.com",
-  phone: "+91-9874563210",
-  whatsapp: "91-9874563210",
-  email: "advisionadvertising@gmail.com",
-  address: "123 Main Street",
+  url: "https://advisionadvertising.in",
+  phone: "+91-8962139536",
+  whatsapp: "91-8962139536",
+  email: "advisionadvertising1997@gmail.com",
+  address: "Warehouse, MR10",
   city: "Indore, Madhya Pradesh",
   socials: {
     instagram: "https://instagram.com/advisionadvertising",

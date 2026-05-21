@@ -113,20 +113,18 @@ export default function ContactPage() {
               {/* Google Map placeholder */}
               <div
                 id="map"
-                className="bg-brand-charcoal border border-white/8 rounded-xl overflow-hidden aspect-video flex items-center justify-center"
+                className="bg-brand-charcoal border border-white/8 rounded-xl overflow-hidden aspect-video"
               >
-                <div className="text-center px-4">
-                  <MapPin
-                    size={32}
-                    className="text-brand-orange mx-auto mb-2"
-                  />
-                  <p className="text-white/30 text-sm">
-                    Embed Google Map here —
-                  </p>
-                  <p className="text-white/20 text-xs mt-1">
-                    Replace with an {`<iframe>`} from Google Maps
-                  </p>
-                </div>
+                <iframe
+                  src="https://www.google.com/maps?q=Indore,Madhya%20Pradesh&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                />
               </div>
             </div>
 

@@ -47,26 +47,26 @@ const team = [
   {
     name: "Raj Chuorasiya",
     designation: "Director & Founder",
-    initial: "Y",
     color: "bg-brand-orange",
+    image: "Aavtar_sv4ocv",
   },
   {
     name: "Aditya Singh",
     designation: "Production Head",
-    initial: "A",
     color: "bg-blue-700",
+    image: "Aavtar_sv4ocv",
   },
   {
     name: "Nikita Gupta",
     designation: "Digital Marketing Lead",
-    initial: "R",
     color: "bg-purple-700",
+    image: "Aavtar_sv4ocv",
   },
   {
     name: "Sunil Dharawat",
     designation: "Developent Lead",
-    initial: "S",
     color: "bg-green-700",
+    image: "Aavtar_sv4ocv",
   },
 ];
 
@@ -191,15 +191,22 @@ export default function AboutPage() {
                 key={v.title}
                 className="bg-brand-dark border border-white/8 rounded-2xl p-6 hover:border-brand-orange/30 transition-colors"
               >
-                {/* <div className="text-3xl mb-4">{v.icon}</div> */}
-                <Image
-                  src={cloudinaryUrl(v.icon)}
-                  alt={v.title}
-                  width={120}
-                  height={120}
-                />
-                <h3 className="text-white font-semibold mb-2">{v.title}</h3>
-                <p className="text-white/40 text-sm leading-relaxed">
+                {/* Image Center */}
+                <div className="flex justify-center items-center mb-4">
+                  <Image
+                    src={cloudinaryUrl(v.icon)}
+                    alt={v.title}
+                    width={100}
+                    height={100}
+                    className="object-cover w-[100px] h-[100px]"
+                  />
+                </div>
+
+                <h3 className="text-white font-semibold mb-2 text-center">
+                  {v.title}
+                </h3>
+
+                <p className="text-white/40 text-sm leading-relaxed text-center">
                   {v.description}
                 </p>
               </div>
@@ -226,9 +233,13 @@ export default function AboutPage() {
                 <div
                   className={`w-16 h-16 ${member.color} rounded-full flex items-center justify-center mx-auto mb-4`}
                 >
-                  <span className="font-display text-2xl text-white">
-                    {member.initial}
-                  </span>
+                  <Image
+                    src={cloudinaryUrl(member.image)}
+                    alt={member.name}
+                    width={100}
+                    height={100}
+                    className="object-contain"
+                  />
                 </div>
                 <p className="text-white/50 text-sm">{member.name}</p>
                 <p className="text-white/20 text-xs mt-1">

@@ -13,6 +13,7 @@ export function cloudinaryUrl(
     quality?: string | number;
     format?: string;
     crop?: string;
+    type?: "image" | "video";
   } = {},
 ): string {
   const {
@@ -21,6 +22,7 @@ export function cloudinaryUrl(
     quality = "auto",
     format = "auto",
     crop = "fill",
+    type = "image",
   } = options;
 
   const transforms = [
@@ -33,5 +35,5 @@ export function cloudinaryUrl(
     .filter(Boolean)
     .join(",");
 
-  return `https://res.cloudinary.com/${cloudinaryConfig.cloudName}/image/upload/${transforms}/${publicId}`;
+  return `https://res.cloudinary.com/${cloudinaryConfig.cloudName}/${type}/upload/${transforms}/${publicId}`;
 }

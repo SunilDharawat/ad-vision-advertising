@@ -1,10 +1,14 @@
 // src/components/sections/HeroSection.tsx
 "use client";
 
-import { useEffect, useRef } from "react";
-import { ArrowRight, Play, CheckCircle } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, CheckCircle, Volume2, VolumeX } from "lucide-react";
 import { siteConfig } from "../../lib/config";
 import Button from "../../components/ui/Button";
+import { cloudinaryUrl } from "../../lib/cloudinary";
+
+// Replace with your actual Cloudinary video public ID
+const HERO_VIDEO_ID = "Hero_Video_qvvd6w";
 
 const highlights = [
   "500+ Projects Delivered",
@@ -13,9 +17,11 @@ const highlights = [
 ];
 
 export default function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+
   const ref = useRef<HTMLDivElement>(null);
 
-  // Parallax on scroll
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -108,24 +114,50 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right — Visual Card Stack */}
-          <div className="relative hidden lg:block animate-fade-in">
+          {/* Right — Visual Card */}
+          <div className="relative  animate-fade-in">
             {/* Main card */}
             <div className="relative bg-brand-charcoal border border-white/10 rounded-2xl overflow-hidden aspect-4/3">
-              {/* Placeholder — replace with your real image */}
-              <div className="absolute inset-0 bg-linear-to-br from-brand-orange/20 to-brand-dark flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-brand-orange/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-brand-orange/30">
-                    <Play size={32} className="text-brand-orange ml-1" />
-                  </div>
-                  <p className="text-white/40 text-sm">
-                    Add your hero image or video here
-                  </p>
-                  <p className="text-white/20 text-xs mt-1">
-                    Recommended: 800×600px
-                  </p>
-                </div>
-              </div>
+              {/* ── Cloudinary video ── */}
+              <video
+                ref={videoRef}
+                className="absolute inset-0 w-full h-full object-cover"
+                src={cloudinaryUrl(HERO_VIDEO_ID, {
+                  type: "video",
+                  width: 800,
+                  height: 600,
+                })}
+                poster={cloudinaryUrl(`${HERO_VIDEO_ID}.jpg`, {
+                  type: "video",
+                  width: 800,
+                  height: 600,
+                })}
+                autoPlay
+                muted={muted}
+                loop
+                playsInline
+              />
+
+              {/* Dim overlay so badges stay readable */}
+              <div className="absolute inset-0 bg-black/30" />
+              {/* Sound Toggle */}
+              <button
+                onClick={() => {
+                  if (videoRef.current) {
+                    const newMuted = !muted;
+
+                    videoRef.current.muted = newMuted;
+                    setMuted(newMuted);
+
+                    if (!newMuted) {
+                      videoRef.current.play();
+                    }
+                  }
+                }}
+                className="absolute bottom-4 right-4 z-20 w-11 h-11 rounded-full bg-black/60 backdrop-blur border border-white/10 text-white flex items-center justify-center hover:bg-brand-orange transition-all"
+              >
+                {muted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+              </button>
 
               {/* Floating badge — top left */}
               <div className="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur border border-white/10 rounded-lg px-3 py-2">
