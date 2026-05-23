@@ -2,6 +2,7 @@
 "use server";
 
 import { z } from "zod";
+import { Resend } from "resend";
 
 const schema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -40,17 +41,17 @@ export async function submitContact(
   }
 
   // When Resend is configured, uncomment this block:
-  // const resend = new Resend(process.env.RESEND_API_KEY);
-  // await resend.emails.send({
-  //   from: "website@yoursite.com",
-  //   to: process.env.CONTACT_EMAIL!,
-  //   subject: `New enquiry from ${result.data.name} — ${result.data.service}`,
-  //   html: `<p><b>Name:</b> ${result.data.name}</p>
-  //          <p><b>Email:</b> ${result.data.email}</p>
-  //          <p><b>Phone:</b> ${result.data.phone}</p>
-  //          <p><b>Service:</b> ${result.data.service}</p>
-  //          <p><b>Message:</b> ${result.data.message}</p>`,
-  // });
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  await resend.emails.send({
+    from: "onboarding@resend.dev",
+    to: process.env.CONTACT_EMAIL!,
+    subject: `New enquiry from ${result.data.name} — ${result.data.service}`,
+    html: `<p><b>Name:</b> ${result.data.name}</p>
+           <p><b>Email:</b> ${result.data.email}</p>
+           <p><b>Phone:</b> ${result.data.phone}</p>
+           <p><b>Service:</b> ${result.data.service}</p>
+           <p><b>Message:</b> ${result.data.message}</p>`,
+  });
 
   console.log("Contact form submission:", result.data);
 

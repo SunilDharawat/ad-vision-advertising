@@ -216,7 +216,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="section-padding bg-brand-dark">
+      {/* <section className="section-padding bg-brand-dark">
         <div className="section-container">
           <div className="text-center mb-14">
             <SectionLabel text="The Team" className="justify-center" />
@@ -249,7 +249,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <CtaBanner />
     </>
