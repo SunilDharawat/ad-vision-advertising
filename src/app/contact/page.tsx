@@ -116,7 +116,7 @@ export default function ContactPage() {
                 className="bg-brand-charcoal border border-white/8 rounded-xl overflow-hidden aspect-video"
               >
                 <iframe
-                  src="https://www.google.com/maps?q=Indore,Madhya%20Pradesh&output=embed"
+                  src="https://www.google.com/maps?q=22.777189,75.856633&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
