@@ -10,6 +10,7 @@ export interface SanityProject {
   slug: string;
   publishedAt: string;
   body?: unknown[];
+  youtubeUrl?: string;
 }
 
 export interface SanityPost {

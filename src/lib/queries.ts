@@ -10,6 +10,7 @@ export const ALL_PROJECTS_QUERY = `
     description,
     "imageUrl": mainImage.asset->url,
     "slug": slug.current,
+     youtubeUrl,
     publishedAt
   }
 `;

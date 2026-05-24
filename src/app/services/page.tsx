@@ -1,6 +1,6 @@
 // src/app/services/page.tsx
 import type { Metadata } from "next";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Send, Video } from "lucide-react";
 import Link from "next/link";
 import { siteConfig, services } from "../../lib/config";
 import PageHero from "../../components/ui/PageHero";
@@ -48,6 +48,16 @@ const serviceDetails = [
       "Exhibition backdrops",
       "Construction site boards",
     ],
+    socialMediaLink: [
+      {
+        name: "Instagram",
+        link: "https://www.instagram.com/flex_printing_indore/",
+      },
+      {
+        name: "Youtube",
+        link: "https://www.youtube.com/flexprintingindore/",
+      },
+    ],
   },
   {
     slug: "hoarding-signage",
@@ -75,6 +85,16 @@ const serviceDetails = [
       "Mall directories",
       "Industrial signage",
     ],
+    socialMediaLink: [
+      {
+        name: "Instagram",
+        link: "https://www.instagram.com/flex_printing_indore/",
+      },
+      {
+        name: "Youtube",
+        link: "https://www.youtube.com/flexprintingindore/",
+      },
+    ],
   },
   {
     slug: "event-branding",
@@ -95,6 +115,16 @@ const serviceDetails = [
       "Product launches",
       "Weddings & social events",
       "Trade shows & expos",
+    ],
+    socialMediaLink: [
+      {
+        name: "Instagram",
+        link: "https://www.instagram.com/flex_printing_indore/",
+      },
+      {
+        name: "Youtube",
+        link: "https://www.youtube.com/flexprintingindore/",
+      },
     ],
   },
   {
@@ -122,6 +152,16 @@ const serviceDetails = [
       "Brand awareness campaigns",
       "E-commerce promotions",
     ],
+    socialMediaLink: [
+      {
+        name: "Instagram",
+        link: "https://www.instagram.com/flex_printing_indore/",
+      },
+      {
+        name: "Youtube",
+        link: "https://www.youtube.com/flexprintingindore/",
+      },
+    ],
   },
   {
     slug: "vehicle-wrapping",
@@ -142,6 +182,16 @@ const serviceDetails = [
       "Service vehicles",
       "Corporate cars",
       "Food trucks",
+    ],
+    socialMediaLink: [
+      {
+        name: "Instagram",
+        link: "https://www.instagram.com/flex_printing_indore/",
+      },
+      {
+        name: "Youtube",
+        link: "https://www.youtube.com/flexprintingindore/",
+      },
     ],
   },
   {
@@ -168,6 +218,16 @@ const serviceDetails = [
       "Restaurant interiors",
       "Hotel lobbies",
       "Showroom displays",
+    ],
+    socialMediaLink: [
+      {
+        name: "Instagram",
+        link: "https://www.instagram.com/flex_printing_indore/",
+      },
+      {
+        name: "Youtube",
+        link: "https://www.youtube.com/flexprintingindore/",
+      },
     ],
   },
 ];
@@ -233,12 +293,47 @@ export default function ServicesPage() {
                     </ul>
                   </div>
 
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 bg-brand-orange hover:bg-orange-500 text-white text-sm font-medium px-6 py-3 rounded-full transition-all"
-                  >
-                    Get a Quote for This <ArrowRight size={14} />
-                  </Link>
+                  {/* CTA + Social Icons */}
+                  <div className="flex flex-wrap items-center gap-3">
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-2 bg-brand-orange hover:bg-orange-500 text-white text-sm font-medium px-6 py-3 rounded-full transition-all"
+                    >
+                      Get a Quote for This <ArrowRight size={14} />
+                    </Link>
+
+                    <div className="flex items-center gap-3">
+                      {/* Instagram */}
+                      <a
+                        href="https://instagram.com/advisionadvertising"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                        className="group flex items-center gap-2 w-11 hover:w-36 h-11 px-3 rounded-full border border-white/10 bg-white/5 hover:bg-pink-500/20 hover:border-pink-500/30 text-white/70 hover:text-pink-400 overflow-hidden transition-all duration-300"
+                      >
+                        <Send size={18} className="shrink-0" />
+
+                        <span className="text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                          Instagram
+                        </span>
+                      </a>
+
+                      {/* YouTube */}
+                      <a
+                        href="https://youtube.com/@advisionadvertising"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                        className="group flex items-center gap-2 w-11 hover:w-32 h-11 px-3 rounded-full border border-white/10 bg-white/5 hover:bg-red-500/20 hover:border-red-500/30 text-white/70 hover:text-red-400 overflow-hidden transition-all duration-300"
+                      >
+                        <Video size={18} className="shrink-0" />
+
+                        <span className="text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                          YouTube
+                        </span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Visual side */}

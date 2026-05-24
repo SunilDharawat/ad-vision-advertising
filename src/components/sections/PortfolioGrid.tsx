@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import type { SanityProject } from "../../types/sanity";
+import { Video } from "lucide-react";
 
 const categories = [
   "All",
@@ -85,11 +86,20 @@ export default function PortfolioGrid({
                     />
                   )}
                   {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                    <span className="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity bg-brand-orange px-4 py-2 rounded-full">
-                      View Project
-                    </span>
-                  </div>
+                  {project.youtubeUrl && (
+                    <a
+                      href={project.youtubeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors flex items-center justify-center"
+                      aria-label={`Watch ${project.title} on YouTube`}
+                    >
+                      <span className="flex items-center gap-2 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity bg-red-600 hover:bg-red-500 px-4 py-2 rounded-full">
+                        <Video size={15} />
+                        Watch on YouTube
+                      </span>
+                    </a>
+                  )}
                 </div>
 
                 {/* Info */}

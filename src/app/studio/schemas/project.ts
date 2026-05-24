@@ -66,6 +66,17 @@ export default defineType({
       type: "datetime",
       initialValue: () => new Date().toISOString(),
     }),
+    defineField({
+      name: "youtubeUrl",
+      title: "YouTube Video URL",
+      type: "url",
+      description:
+        "Paste the full YouTube video or shorts URL for this project (optional)",
+      validation: (Rule) =>
+        Rule.uri({ scheme: ["http", "https"] }).warning(
+          "Please enter a valid URL",
+        ),
+    }),
   ],
   preview: {
     select: { title: "title", subtitle: "category", media: "mainImage" },
