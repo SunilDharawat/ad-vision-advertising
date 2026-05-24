@@ -8,7 +8,7 @@ export const siteConfig: SiteConfig = {
     "Indore's trusted partner for flex printing, hoardings, event branding, digital marketing, and all advertising solutions. Quality that speaks before you do.",
   url: "https://advisionadvertising.in",
   phone: "+91-8962139536",
-  whatsapp: "91-8962139536",
+  whatsapp: "918962139536",
   email: "advisionadvertising1997@gmail.com",
   address: "Warehouse, MR10",
   city: "Indore, Madhya Pradesh",
